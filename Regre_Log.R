@@ -73,6 +73,21 @@ print(paste('Acuracia', 1-misClasificError))
 # Criando a confusion matrix
 table(dados_teste$HIPERTENSO, fitted.probabilities > 0.5)
 
+---------------------------------------------------------------------------------------------------
+
+
+# Avaliando a performance do modelo
+
+# Plot do modelo com melhor acurácia
+
+previsoes <- predict(final.log.model, dados_teste , type = "response")
+previsoes_finais <- prediction(previsoes, dados_teste$HIPERTENSO)
+
+
+# Plot
+par(mfrow = c(1, 2))
+plot.roc.curve(previsoes_finais, title.text = "Curva ROC")
+
 
 
 

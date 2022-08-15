@@ -24,14 +24,16 @@ range(tes_hiper$IDADE)
 # diferença entre a menor e maior idade da amostra com HAS
 diff(range(tes_hiper$IDADE))
 
-# Plots
+# ----------------------------------Plots------------------------------------------#
 
 # Boxplot
 
 boxplot(tes_hiper$IDADE, main = "Boxplot das Idades dos Hipertensos", ylab = "IDADE")
 
 ---# boxplot da amostra separados por HAS ou nao, genero e idade
-  
+  require(ggplot2)
+  library(ggplot2)
+    
 ggplot(teste, aes(HIPERTENSO, IDADE, fill = factor(GENERO))) +
   geom_boxplot(alpha = 0.5) +
   labs(title = "Grafico de Hipertensos", x = "HIPERTEMSO", y = "IDADE", fill = "GENERO") +
@@ -84,15 +86,15 @@ CrossTable(x = teste$GENERO, y = teste$HIPERTENSO)
 # Eh um teste nao parametrico, ou seja, nao depende dos 
 # parametros populacionais, como media e variancia.
 
-# O principio basico deste metodo eh comparar proporcoes, 
-# isto eh, as possiveis divergencias entre as frequencias 
+# O principio basico deste metodo e comparar proporcoes, 
+# isto e, as possiveis divergencias entre as frequencias 
 # observadas e esperadas para um certo evento.
 # Evidentemente, pode-se dizer que dois grupos se 
 # comportam de forma semelhante se as diferencas entre 
 # as frequencias observadas e as esperadas em cada 
 # categoria forem muito pequenas, proximas a zero.
 
-# Ou seja, Se a probabilidade eh muito baixa, ele fornece 
+# Ou seja, Se a probabilidade e muito baixa, ele fornece 
 # fortes evidencias de que as duas variaveis estao 
 # associadas.
 

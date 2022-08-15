@@ -11,10 +11,10 @@ require(tidyverse)
 library(tidyverse)
 
 
-# Estruturando dados 
-
+# Carregando Dados  
 teste <- read_csv("teste.csv")
 head(teste)
+
 # verificar se existe NA no arquivo teste.csv
 ver <- is.na(teste)
 table(ver)
